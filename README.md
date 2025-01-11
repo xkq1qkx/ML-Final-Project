@@ -1,6 +1,6 @@
 # 机器学习大作业报告
 #### 作业主要内容：复现并尝试改进《Optimization and Identification of Lattice Quantizers》中的优化方法并可视化评估
-| | |
+| please click "run" and wait for about 30 seconds, then you can see the vector move | |
 |---|---|
 |![](vector_animation_n2.gif)|![](vector_animation_n3.gif)|
 ## 一、复现
