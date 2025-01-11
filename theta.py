@@ -27,7 +27,7 @@ ax.set_xlabel('X axis')
 ax.set_ylabel('Y axis')
 ax.set_zlabel('Z axis')
 '''
-with open('B_process_n10.json', 'r') as f:
+with open('n3_Adam.json', 'r') as f:
     B_matrices_json = json.load(f)
     B = np.array(B_matrices_json[-1])
     B = B / np.linalg.norm(B, axis=1, keepdims=True)

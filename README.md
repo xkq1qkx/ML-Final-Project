@@ -1,6 +1,8 @@
 # 机器学习大作业报告
 #### 作业主要内容：复现并尝试改进《Optimization and Identification of Lattice Quantizers》中的优化方法并可视化评估
-
+| | |
+|---|---|
+|![](vector_animation_n2.gif)|![](vector_animation_n3.gif)|
 ## 一、复现
 我们完全按照论文中的算法流程进行了复现，但由于论文没有给出具体的代码，我们从头实现了论文中要求的所有功能。以下是一些实现的细节：
 #### 1、随机数生成
@@ -70,6 +72,9 @@ improve_method_args={
 | n=3 | ![SGD n=3](./n3_SGD.png) | ![Adam n=3](./n3_Adam.png) | ![AdamW n=3](./n3_adamW.png) |
 | n=8 | ![SGD n=8](./n8_SGD.png) | ![Adam n=8](./n_8_end.png) | ![AdamW n=8](./n8_adamw.png) |
 
+但是由于计算资源问题，我们无法在更高的维度验证其正确性，甚至当维度达到8以上时，完成一次10000step的训练也需要20个小时以上，所以我们最高在维度为8上做了实验并可视化结果，但是可能由于参数，batch_size不够大或者训练100000step对于高维来说过于少导致最终优化到的结果并不特别好，但是在低维度上的快速收敛能够说明改进算法的正确性。
+并且我们对于改进中的batch size也做了实验，实验表明更大的batch size 能够帮助更快更好地收敛到解
+
 | Batch Size | Adam | 
 | --- | --- |
 | 1 | <img src="n2_Adam1.png" width="300"> |
@@ -78,3 +83,8 @@ improve_method_args={
 | 100| <img src="n2_Adam100.png" width="300"> |
 | 500 | <img src="n2_Adam500.png" width="300"> |
 
+## 六、动画展示
+为了更好地展示优化过程中的变化，我们制作了以下动画：
+| | |
+| --- | --- |
+| ![Optimization Animation](./vector_animation_n2.gif) | ![Optimization Animation](./vector_animation_n3.gif)|
